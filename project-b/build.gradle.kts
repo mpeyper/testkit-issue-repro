@@ -1,5 +1,6 @@
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
+apply<MyPlugin>()
 plugins {
   id("com.github.johnrengelman.shadow")
 }
