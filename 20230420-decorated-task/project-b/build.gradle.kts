@@ -1,8 +1,8 @@
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
-apply<MyPlugin>()
 plugins {
   id("com.github.johnrengelman.shadow")
+  id("com.squareup.cash.decoratedtask.test")
 }
 
 val jar by tasks.getting(Jar::class) {
