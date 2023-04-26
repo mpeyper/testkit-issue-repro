@@ -21,7 +21,7 @@ Run all tests:
 ./bin/gradle test
 ```
 
-Or;
+Or,
 
 Run `maven local` tests:
 
@@ -55,10 +55,10 @@ The `testkit` tests only produce these logs:
 3. `-- BYNAME found task ':consumer-project:shadowJar' (type class com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar_Decorated --`
 4. `-- CONFIGURE CONSUMER PROJECT --`
 
-The `EAGERLY found..` and `LAZILY found` logs are missing when the plugin is added by `testkit`.
+The `EAGERLY found...` and `LAZILY found ...` logs are missing when the plugin is added by `testkit`.
 
-Note that if the plugin is attempted to be cast to `ShadowJar` (instead of the decorated version), a runtime error is
-produced in the `testkit` version only as well.
+Note that if the plugin is attempted to be cast to `ShadowJar` (by uncommenting [this block](/plugin/src/main/kotlin/MyPlugin.kt#L20-L22)),
+a runtime error is produced in the `testkit` version only as well.
 
 ## Expectation
 
