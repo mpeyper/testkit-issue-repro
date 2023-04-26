@@ -2,7 +2,7 @@ import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 plugins {
   id("com.github.johnrengelman.shadow")
-  id("com.squareup.cash.decoratedtask.test")
+  id("com.example.plugin.test")
 }
 
 val jar by tasks.getting(Jar::class) {
@@ -10,6 +10,6 @@ val jar by tasks.getting(Jar::class) {
 }
 
 val shadowJar by tasks.getting(ShadowJar::class) {
-  println("-- CONFIGURE PROJECT --")
-  relocate("api", "projectb.shaded.api")
+  println("-- CONFIGURE CONSUMER PROJECT --")
+  relocate("api", "consumerproject.shaded.api")
 }

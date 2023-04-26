@@ -1,6 +1,7 @@
-import org.gradle.api.Project
-import org.gradle.api.Plugin
+
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+import org.gradle.api.Plugin
+import org.gradle.api.Project
 
 class MyPlugin : Plugin<Project> {
     override fun apply(project: Project) {
@@ -16,6 +17,9 @@ class MyPlugin : Plugin<Project> {
             project.tasks.named("shadowJar").configure {
                 println("-- BYNAME found $this (type ${this::class.java} --")
             }
+//            project.tasks.named("shadowJar", ShadowJar::class.java).configure {
+//                println("-- BYNAME and typed found $this (type ${this::class.java} --")
+//            }
         }
     }
 }
