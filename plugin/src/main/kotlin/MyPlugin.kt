@@ -7,15 +7,15 @@ class MyPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         println("-- APPLYING MyPlugin --")
         project.pluginManager.withPlugin("com.github.johnrengelman.shadow") {
-            println("-- SHADOW PLUGIN APPLIED --")
+            println("-- SHADOW PLUGIN APPLIED (type ${ShadowJar::class.java}) --")
             project.tasks.withType(ShadowJar::class.java) {
-                println("-- EAGERLY found $this --")
+                println("-- EAGERLY found $this (type ${this::class.java}) --")
             }
             project.tasks.withType(ShadowJar::class.java).configureEach {
-                println("-- LAZILY found $this --")
+                println("-- LAZILY found $this (type ${this::class.java}) --")
             }
             project.tasks.named("shadowJar").configure {
-                println("-- BYNAME found $this (type ${this::class.java} --")
+                println("-- BYNAME found $this (type ${this::class.java}) --")
             }
 //            project.tasks.named("shadowJar", ShadowJar::class.java).configure {
 //                println("-- BYNAME and typed found $this (type ${this::class.java} --")

@@ -26,10 +26,10 @@ class MyPluginTest {
         assertThat(task.outcome).isIn(TaskOutcome.SUCCESS, TaskOutcome.UP_TO_DATE)
 
         assertThat(result.output).contains("-- APPLYING MyPlugin --")
-        assertThat(result.output).contains("-- SHADOW PLUGIN APPLIED --")
-        assertThat(result.output).contains("-- EAGERLY found task ':consumer-project:shadowJar' --")
-        assertThat(result.output).contains("-- LAZILY found task ':consumer-project:shadowJar' --")
-        assertThat(result.output).contains("-- BYNAME found task ':consumer-project:shadowJar' (type class com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar_Decorated --")
+        assertThat(result.output).contains("-- SHADOW PLUGIN APPLIED (type class com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar) --")
+        assertThat(result.output).contains("-- EAGERLY found task ':consumer-project:shadowJar' (type class com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar_Decorated) --")
+        assertThat(result.output).contains("-- LAZILY found task ':consumer-project:shadowJar' (type class com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar_Decorated) --")
+        assertThat(result.output).contains("-- BYNAME found task ':consumer-project:shadowJar' (type class com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar_Decorated) --")
         assertThat(result.output).contains("-- CONFIGURE CONSUMER PROJECT --")
     }
 
@@ -48,10 +48,10 @@ class MyPluginTest {
         assertThat(task.outcome).isIn(TaskOutcome.SUCCESS, TaskOutcome.UP_TO_DATE)
 
         assertThat(result.output).contains("-- APPLYING MyPlugin --")
-        assertThat(result.output).contains("-- SHADOW PLUGIN APPLIED --")
-        assertThat(result.output).contains("-- EAGERLY found task ':consumer-project:shadowJar' --")
-        assertThat(result.output).contains("-- LAZILY found task ':consumer-project:shadowJar' --")
-        assertThat(result.output).contains("-- BYNAME found task ':consumer-project:shadowJar' (type class com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar_Decorated --")
+        assertThat(result.output).contains("-- SHADOW PLUGIN APPLIED (type class com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar) --")
+        assertThat(result.output).contains("-- EAGERLY found task ':consumer-project:shadowJar' (type class com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar_Decorated) --")
+        assertThat(result.output).contains("-- LAZILY found task ':consumer-project:shadowJar' (type class com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar_Decorated) --")
+        assertThat(result.output).contains("-- BYNAME found task ':consumer-project:shadowJar' (type class com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar_Decorated) --")
         assertThat(result.output).contains("-- CONFIGURE CONSUMER PROJECT --")
     }
 }
